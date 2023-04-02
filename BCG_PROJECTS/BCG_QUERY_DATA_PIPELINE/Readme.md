@@ -14,3 +14,4 @@
 We can run this using :
 
 ## spark-submit --driver-memory {driver_memory}g --executor-memory {executor_memory}g main.py config.yaml > log_file.log
+git checkout -b bcg_project
