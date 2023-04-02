@@ -1,0 +1,60 @@
+CASESTUDYQUERIES:
+  base_data_path: /home/knimbus/PROJECTS
+  raw_data_path: BCG_PROJECTS/data
+  final_dump_path_for_validation_report: BCG_PROJECTS/output_data
+  serial_ops:                                     
+    - input: 
+        relative_path: Data
+      output: analytics_output_data
+      components:
+        - component: CaseStudyQuery
+          input_file_name:
+              relative_path: Data
+              file_names: {"Charges_use": "Charges_use.csv", "Damages_use": "Damages_use.csv", "Endorse_use": "Endorse_use.csv", 
+                            "Primary_Person_use": "Primary_Person_use.csv", "Restrict_use": "Restrict_use.csv", "Units_use": "Units_use.csv"}
+              file_read_kwargs: {} #
+          operations:
+            - operation: analytics_1
+              output_file_name: "analytics_1.csv"
+              kwargs:
+                file_to_be_used: 
+                  Primary_Person_use_data: Primary_Person_use
+            - operation: analytics_2
+              output_file_name: "analytics_2.csv"
+              kwargs:
+                file_to_be_used: 
+                  Units_use_data: Units_use
+            - operation: analytics_3
+              output_file_name: "analytics_3.csv"
+              kwargs:
+                file_to_be_used: 
+                  Primary_Person_use_data: Primary_Person_use
+            - operation: analytics_4
+              output_file_name: "analytics_4.csv"
+              kwargs:
+                file_to_be_used: 
+                  Units_use_data: Units_use           
+            - operation: analytics_5
+              output_file_name: "analytics_5.csv"
+              kwargs:
+                file_to_be_used: 
+                  Units_use_data: Units_use
+                  Primary_Person_use_data: Primary_Person_use
+            - operation: analytics_6
+              output_file_name: "analytics_6.csv"
+              kwargs:
+                file_to_be_used: 
+                  Units_use_data: Units_use
+                  Primary_Person_use_data: Primary_Person_use
+            - operation: analytics_7
+              output_file_name: "analytics_7.csv"
+              kwargs:
+                file_to_be_used: 
+                  Units_use_data: Units_use
+            - operation: analytics_8
+              output_file_name: "analytics_8.csv"
+              kwargs:
+                file_to_be_used: 
+                  Units_use_data: Units_use
+                  Primary_Person_use_data: Primary_Person_use
+                  charges_use_data: Charges_use
